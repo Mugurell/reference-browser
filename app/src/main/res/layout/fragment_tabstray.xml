@@ -8,6 +8,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/default_tab_item"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:icon="@drawable/mozac_ic_tab" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/private_tab_item"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:icon="@drawable/mozac_ic_private_browsing" />
+
+    </com.google.android.material.tabs.TabLayout>
+
     <mozilla.components.concept.tabstray.TabsTray
         android:id="@+id/tabsTray"
         android:layout_width="match_parent"
@@ -15,7 +37,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tabsPanel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
         mozac:tabsTrayItemBackgroundColor="@android:color/transparent"
         mozac:tabsTrayItemTextColor="#ffffff" />
 
@@ -23,10 +45,10 @@
         android:id="@+id/tabsPanel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/toolbarBackgroundColor"
         android:elevation="4dp"
-        android:background="@color/toolbarBackgroundColor" />
-    
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
